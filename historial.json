@@ -1,0 +1,38 @@
+[
+  {
+    "ts": "2026-05-08 21:07:14",
+    "name": "2.9 Memoria RAM",
+    "cmd": "powershell -command \"$os=Get-CimInstance Win32_OperatingSystem; [PSCustomObject]@{Total_GB=[math]::Round($os.TotalVisibleMemorySize/1MB,1); Free_GB=[math]::Round($os.FreePhysicalMemory/1MB,1)} | Format-Table\"",
+    "status": "ejecutado"
+  },
+  {
+    "ts": "2026-05-08 21:07:09",
+    "name": "2.6 Info BIOS / Placa base",
+    "cmd": "powershell -command \"Get-CimInstance Win32_BaseBoard | Select Product,Manufacturer,Version,SerialNumber | Format-List\"",
+    "status": "ejecutado"
+  },
+  {
+    "ts": "2026-05-08 21:07:00",
+    "name": "2.3 Variables de entorno",
+    "cmd": "set",
+    "status": "ejecutado"
+  },
+  {
+    "ts": "2026-05-08 21:06:58",
+    "name": "2.3 Variables de entorno",
+    "cmd": "set",
+    "status": "ejecutado"
+  },
+  {
+    "ts": "2026-05-08 21:06:56",
+    "name": "2.3 Variables de entorno",
+    "cmd": "set",
+    "status": "ejecutado"
+  },
+  {
+    "ts": "2026-05-08 21:06:52",
+    "name": "2.2 Versión de Windows",
+    "cmd": "winver",
+    "status": "ejecutado"
+  }
+]

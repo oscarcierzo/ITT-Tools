@@ -45,28 +45,28 @@ PWD_HASH = "dddebae3324c7243fb8af122bf20ecdd508340bcf232503009448e9e91df56b2"
 # ══════════════════════════════════════════════════════════════
 # COLORES
 # ══════════════════════════════════════════════════════════════
-BG       = "#0e1420"
-SURFACE  = "#131c2e"
-SURFACE2 = "#1a2540"
-BORDER   = "#2a3a58"
-TEXT     = "#dde4f0"
-MUTED    = "#8a9ab8"
-CYAN     = "#00b4d8"
-CYAN_DIM = "#0d2535"
-GREEN    = "#3dd68c"
-RED      = "#e56b6f"
-YELLOW   = "#f4a261"
-ORANGE   = "#fb923c"
+BG       = "#0a0f1e"
+SURFACE  = "#111827"
+SURFACE2 = "#1e2d45"
+BORDER   = "#263350"
+TEXT     = "#e8edf8"
+MUTED    = "#7a8faf"
+CYAN     = "#22d3ee"
+CYAN_DIM = "#0c2233"
+GREEN    = "#34d399"
+RED      = "#f87171"
+YELLOW   = "#fbbf24"
+ORANGE   = "#f97316"
 PURPLE   = "#a78bfa"
 PINK     = "#ff64c8"
-LIME     = "#b8c840"
-BLUE     = "#64b5ff"
-FONT     = ("Segoe UI", 10)
-FONT_B   = ("Segoe UI", 10, "bold")
+LIME     = "#a3e635"
+BLUE     = "#60a5fa"
+FONT     = ("Segoe UI", 11)
+FONT_B   = ("Segoe UI", 11, "bold")
 FONT_M   = ("Consolas", 10)
 FONT_MB  = ("Consolas", 10, "bold")
-FONT_LG  = ("Segoe UI", 15, "bold")
-FONT_XS  = ("Segoe UI", 9)
+FONT_LG  = ("Segoe UI", 16, "bold")
+FONT_XS  = ("Segoe UI", 10)
 
 # ══════════════════════════════════════════════════════════════
 # DATOS DE COMANDOS
@@ -104,12 +104,12 @@ CATEGORIES = [
     {"id": 'discos', "label": '💾  Discos', "color": YELLOW,
      "cmds": [
         ('3.1 Espacio en discos', 'Espacio libre y total de cada unidad', 'powershell -command \"Get-PSDrive -PSProvider FileSystem | Select Name,@{n=\'Used(GB)\';e={[math]::Round($_.Used/1GB,1)}},@{n=\'Free(GB)\';e={[math]::Round($_.Free/1GB,1)}} | Format-Table -AutoSize\"'),
-        ('3.2 Verificar disco CHKDSK', 'Verifica y repara disco C: al reiniciar', 'chkdsk C: /f /r'),
-        ('3.3 SFC — Reparar sistema', 'Escanea archivos protegidos del sistema', 'sfc /scannow'),
-        ('3.4 DISM — Reparar imagen', 'Repara imagen de Windows vía WU', 'DISM /Online /Cleanup-Image /RestoreHealth'),
-        ('3.5 Defragmentar disco C:', 'Desfragmenta la unidad C:', 'defrag C: /U /V'),
+        ('3.2 Verificar disco CHKDSK', 'Verifica y repara disco C: al reiniciar', 'start cmd /k chkdsk C: /f /r'),
+        ('3.3 SFC — Reparar sistema', 'Escanea archivos protegidos del sistema', 'start cmd /k sfc /scannow'),
+        ('3.4 DISM — Reparar imagen', 'Repara imagen de Windows vía WU', 'start cmd /k DISM /Online /Cleanup-Image /RestoreHealth'),
+        ('3.5 Defragmentar disco C:', 'Desfragmenta la unidad C:', 'start cmd /k defrag C: /U /V'),
         ('3.6 Gestor de discos (GUI)', 'Abre administración de discos', 'diskmgmt.msc'),
-        ('3.7 Liberar espacio disco', 'Limpieza de archivos innecesarios', 'cleanmgr /d C:'),
+        ('3.7 Liberar espacio disco', 'Limpieza de archivos innecesarios', 'start cmd /k cleanmgr /d C:'),
         ('3.8 Información de volúmenes', 'Detalles de todos los volúmenes', 'powershell -command \"Get-Volume | Select DriveLetter,FriendlyName,FileSystemType,@{n=\'Size(GB)\';e={[math]::Round($_.Size/1GB,1)}},@{n=\'Free(GB)\';e={[math]::Round($_.SizeRemaining/1GB,1)}} | Format-Table -AutoSize\"'),
         ('3.9 Disco físico info', 'Información de discos físicos', 'powershell -command \"Get-PhysicalDisk | Select FriendlyName,@{n=\'Size(GB)\';e={[math]::Round($_.Size/1GB,0)}},HealthStatus,OperationalStatus | Format-Table -AutoSize\"'),
         ('3.10 Estado SMART disco', 'Estado SMART del disco duro', 'powershell -command \"Get-PhysicalDisk | Select FriendlyName,SerialNumber,HealthStatus,OperationalStatus | Format-Table -AutoSize\"'),
@@ -185,8 +185,8 @@ CATEGORIES = [
     {"id": 'registro', "label": '📝  Registro', "color": RED,
      "cmds": [
         ('8.1 Editor de registro', 'Abre regedit', 'regedit'),
-        ('8.2 Exportar clave registro', 'Exporta clave a archivo .reg', 'reg export HKLM\\SOFTWARE\\MiClave backup.reg'),
-        ('8.3 Importar archivo .reg', 'Importa .reg al registro', 'reg import backup.reg'),
+        ('8.2 Exportar clave registro', 'Exporta clave a archivo .reg', 'start cmd /k reg export HKLM\\SOFTWARE\\MiClave backup.reg'),
+        ('8.3 Importar archivo .reg', 'Importa .reg al registro', 'start cmd /k reg import backup.reg'),
         ('8.4 Consultar clave', 'Lee valor específico del registro', 'reg query HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion /v ProgramFilesDir'),
         ('8.5 Buscar en registro', 'Busca texto en todo el registro', 'reg query HKLM /f "termino" /t REG_SZ /s'),
         ('8.6 Programas inicio (usuario)', 'Inicio automático del usuario', 'reg query HKCU\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run'),
@@ -199,27 +199,27 @@ CATEGORIES = [
         ('9.3 Certificados sistema', 'Administrador de certificados del equipo', 'certlm.msc'),
         ('9.4 Certificados usuario', 'Certificados del usuario actual', 'certmgr.msc'),
         ('9.5 Permisos NTFS (icacls)', 'Permisos de una carpeta', 'icacls C:\\Windows\\System32'),
-        ('9.6 Defender — escaneo rápido', 'Escaneo rápido de Windows Defender', 'MpCmdRun.exe -Scan -ScanType 1'),
-        ('9.7 Defender — escaneo completo', 'Escaneo completo del sistema', 'MpCmdRun.exe -Scan -ScanType 2'),
+        ('9.6 Defender — escaneo rápido', 'Escaneo rápido de Windows Defender', 'start cmd /k MpCmdRun.exe -Scan -ScanType 1'),
+        ('9.7 Defender — escaneo completo', 'Escaneo completo del sistema', 'start cmd /k MpCmdRun.exe -Scan -ScanType 2'),
         ('9.8 Usuarios con sesión abierta', 'Sesiones interactivas activas', 'query user'),
     ]},
     {"id": 'ad', "label": '🏢  Active Directory', "color": "#60a5fa",
      "cmds": [
         ('10.1 Info del dominio', 'Nombre y controladores del dominio', 'echo %USERDOMAIN% && echo %LOGONSERVER%'),
-        ('10.2 Controladores de dominio', 'Lista los DCs del dominio actual', 'nltest /dclist:%USERDOMAIN%'),
-        ('10.3 DC principal (PDC)', 'Localiza el DC con rol PDC', 'netdom query pdc'),
-        ('10.4 Roles FSMO', 'Todos los roles FSMO del dominio', 'netdom query fsmo'),
-        ('10.5 Equipos del dominio', 'Lista equipos unidos al dominio', 'netdom query workstation'),
-        ('10.6 Servidores del dominio', 'Lista servidores del dominio', 'netdom query server'),
+        ('10.2 Controladores de dominio', 'Lista los DCs del dominio actual', 'start cmd /k nltest /dclist:%USERDOMAIN%'),
+        ('10.3 DC principal (PDC)', 'Localiza el DC con rol PDC', 'start cmd /k netdom query pdc'),
+        ('10.4 Roles FSMO', 'Todos los roles FSMO del dominio', 'start cmd /k netdom query fsmo'),
+        ('10.5 Equipos del dominio', 'Lista equipos unidos al dominio', 'start cmd /k netdom query workstation'),
+        ('10.6 Servidores del dominio', 'Lista servidores del dominio', 'start cmd /k netdom query server'),
         ('10.7 Info usuario AD', 'Detalles del usuario actual en AD', 'net user %USERNAME% /domain'),
         ('10.8 Grupos del usuario (AD)', 'Grupos AD del usuario actual', 'whoami /groups'),
         ('10.9 Grupos del dominio', 'Todos los grupos globales del dominio', 'net group /domain'),
         ('10.10 Admins del dominio', 'Miembros del grupo Domain Admins', 'net group "Administradores del dominio" /domain'),
-        ('10.11 Unir equipo al dominio', 'Comando base para unir al dominio', 'netdom join %COMPUTERNAME% /domain:TUDOMINIO /userd:ADMIN /passwordd:*'),
-        ('10.12 Expulsar del dominio', 'Elimina el equipo del dominio', 'netdom remove %COMPUTERNAME% /domain:TUDOMINIO /userd:ADMIN /passwordd:*'),
+        ('10.11 Unir equipo al dominio', 'Comando base para unir al dominio', 'start cmd /k netdom join %COMPUTERNAME% /domain:TUDOMINIO /userd:ADMIN /passwordd:*'),
+        ('10.12 Expulsar del dominio', 'Elimina el equipo del dominio', 'start cmd /k netdom remove %COMPUTERNAME% /domain:TUDOMINIO /userd:ADMIN /passwordd:*'),
         ('10.13 Sincronizar hora con DC', 'Sincroniza el reloj con el dominio', 'w32tm /resync /force'),
         ('10.14 Estado sincronización hora', 'Diagnóstico de sincronización NTP', 'w32tm /query /status'),
-        ('10.15 Política de grupo (gpupdate)', 'Fuerza actualización de GPOs', 'gpupdate /force'),
+        ('10.15 Política de grupo (gpupdate)', 'Fuerza actualización de GPOs', 'start cmd /k gpupdate /force'),
         ('10.16 Resultado GPO aplicada', 'GPOs aplicadas al usuario/equipo', 'gpresult /r'),
         ('10.17 Usuarios y Equipos AD', 'Consola ADUC (requiere RSAT)', 'dsa.msc'),
         ('10.18 DNS Manager', 'Consola DNS (requiere RSAT)', 'dnsmgmt.msc'),
@@ -241,7 +241,7 @@ CATEGORIES = [
         ('Exportar lista impresoras CSV',  'Exporta lista a CSV y abre Notepad',            'powershell -command \"Get-Printer | Select Name,PortName,PrinterStatus | Export-Csv impresoras.csv -NoTypeInformation -Encoding UTF8; Start-Process notepad impresoras.csv\"'),
         ('11.12 Exportar config impresoras', 'Backup completo impresoras con PrintBRM (Admin requerido)', r'C:\Windows\System32\spool\tools\PrintBRM.exe -B -F C:\impresoras_backup.printerExport'),
         ('11.13 Importar config impresoras', 'Restaurar backup impresoras con PrintBRM', r'C:\Windows\System32\spool\tools\PrintBRM.exe -R -F C:\impresoras_backup.printerExport'),
-        ('Abrir asistente impresoras',      'GUI exportar/importar impresoras (printbrmui)',          'printbrmui.exe'),
+        ('Abrir asistente impresoras',      'GUI exportar/importar impresoras (printbrmui)',          'start cmd /k printbrmui.exe'),
     ]},
     {"id": 'windows_update', "label": '🔄  Windows Update', "color": BLUE,
      "cmds": [
@@ -256,7 +256,7 @@ CATEGORIES = [
         ('12.9 Borrar cache de Windows Update', 'Limpia SoftwareDistribution y reinicia WU', 'powershell -command "Stop-Service wuauserv,bits -Force; Remove-Item ($env:windir+\'\\\\SoftwareDistribution\\\\Download\\\\*\') -Recurse -Force -EA SilentlyContinue; Start-Service wuauserv,bits; Write-Host Cache WU limpiada"'),
         ('12.10 Desactivar actualizaciones auto', 'Deshabilita Windows Update automatico (GPO)', 'powershell -command "New-ItemProperty HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate\\AU AUOptions -Type DWord -Value 1 -Force; Write-Host WU automatico desactivado"'),
         ('12.11 Activar actualizaciones auto', 'Reactiva Windows Update automatico', 'powershell -command "Remove-ItemProperty HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\WindowsUpdate\\AU AUOptions -EA SilentlyContinue; Write-Host WU automatico reactivado"'),
-        ('12.12 Hotfixes instalados (lista)', 'Todos los parches KB instalados en el sistema', 'wmic qfe list brief /format:table'),
+        ('12.12 Hotfixes instalados (lista)', 'Todos los parches KB instalados en el sistema', 'start cmd /k wmic qfe list brief /format:table'),
         ('12.13 Configuracion Windows Update', 'Panel de configuracion de Windows Update', 'start ms-settings:windowsupdate-options'),
     ]},
     {"id": 'rdp', "label": '🖥  RDP / Remoto', "color": PURPLE,
@@ -314,14 +314,14 @@ CATEGORIES = [
     {"id": 'reparaciones', "label": '🔧  Reparaciones', "color": RED,
      "cmds": [
         ('16.1 DISM + SFC seguidos', 'Repara imagen y archivos del sistema en secuencia', 'powershell -command "dism /Online /Cleanup-Image /RestoreHealth; sfc /scannow"'),
-        ('16.2 DISM — RestoreHealth', 'Repara imagen de Windows (solo DISM)', 'DISM /Online /Cleanup-Image /RestoreHealth'),
-        ('16.3 SFC — Escanear sistema', 'Verifica y repara archivos protegidos', 'sfc /scannow'),
+        ('16.2 DISM — RestoreHealth', 'Repara imagen de Windows (solo DISM)', 'start cmd /k DISM /Online /Cleanup-Image /RestoreHealth'),
+        ('16.3 SFC — Escanear sistema', 'Verifica y repara archivos protegidos', 'start cmd /k sfc /scannow'),
         ('16.4 Reparar Windows Update', 'Para WU, borra cache y reinicia servicios', 'powershell -command "Stop-Service wuauserv,bits,cryptSvc -Force; Remove-Item ($env:windir+\'\\\\SoftwareDistribution\') -Recurse -Force -EA SilentlyContinue; Start-Service wuauserv,bits,cryptSvc; Write-Host WU OK"'),
         ('16.5 Reparar red completa', 'Winsock + TCP/IP + DHCP + DNS + ARP', 'cmd /c netsh winsock reset && netsh int ip reset && ipconfig /release && ipconfig /renew && ipconfig /flushdns'),
         ('16.6 Reiniciar spooler impresion', 'Limpia cola y reinicia servicio de impresion', 'powershell -command "Stop-Service spooler -Force; Remove-Item ($env:windir+\'\\\\System32\\\\spool\\\\PRINTERS\\\\*\') -Force -EA SilentlyContinue; Start-Service spooler; Write-Host Spooler OK"'),
         ('16.7 Limpiar TEMP + Prefetch', 'Borra archivos temporales y prefetch', 'cmd /c del /q /f /s "%TEMP%\\*" && del /q /f /s "C:\\Windows\\Temp\\*" && del /q /f /s "C:\\Windows\\Prefetch\\*"'),
         ('16.8 Reparar arranque BCD', 'bootrec rebuildbcd + fixmbr + fixboot', 'cmd /c bootrec /fixmbr && bootrec /fixboot && bootrec /rebuildbcd'),
-        ('16.9 Forzar chkdsk C: al arranque', 'Programa verificacion de disco en reinicio', 'chkdsk C: /f /r /x'),
+        ('16.9 Forzar chkdsk C: al arranque', 'Programa verificacion de disco en reinicio', 'start cmd /k chkdsk C: /f /r /x'),
         ('16.10 Limpiar DNS + cache ARP', 'Limpia DNS local y tabla ARP', 'cmd /c ipconfig /flushdns && arp -d *'),
         ('16.11 Vaciar Papelera (silencioso)', 'Vacia la papelera sin confirmacion', 'powershell -command "Clear-RecycleBin -Force -EA SilentlyContinue; Write-Host Papelera vaciada"'),
         ('16.12 Reinstalar tienda Windows', 'Reinstala Microsoft Store y apps base', 'powershell -command "Get-AppxPackage -AllUsers Microsoft.WindowsStore | ForEach {Add-AppxPackage -DisableDevelopmentMode -Register ($_.InstallLocation+\'\\\\AppXManifest.xml\')}"'),
@@ -335,7 +335,7 @@ CATEGORIES = [
         ('17.5 Activar SysMain/Superfetch', 'Reactiva Superfetch para HDD', 'powershell -command "Set-Service SysMain -StartupType Automatic; Start-Service SysMain; Write-Host SysMain activado"'),
         ('17.6 Efectos visuales rendimiento', 'Modo mejor rendimiento sin animaciones', 'powershell -command "Set-ItemProperty \'HKCU:\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\VisualEffects\' VisualFXSetting 2"'),
         ('17.7 Efectos visuales apariencia', 'Restaura efectos visuales completos', 'powershell -command "Set-ItemProperty \'HKCU:\\\\Software\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\Explorer\\\\VisualEffects\' VisualFXSetting 1"'),
-        ('17.8 Desactivar telemetria', 'Para DiagTrack y dmwappushservice', 'powershell -command "Stop-Service DiagTrack,dmwappushservice -Force; Set-Service DiagTrack,dmwappushservice -StartupType Disabled; Write-Host Telemetria desactivada"'),
+        ('17.8 Desactivar telemetria', 'Para DiagTrack y dmwappushservice', 'powershell -command "Stop-Service DiagTrack,dmwappushservice -Force; Set-Service -Name DiagTrack -StartupType Disabled; Set-Service -Name dmwappushservice -StartupType Disabled; Write-Host Telemetria desactivada"'),
         ('17.9 Activar TRIM SSD', 'Habilita TRIM en todas las unidades', 'fsutil behavior set DisableDeleteNotify 0'),
         ('17.10 God Mode en escritorio', 'Carpeta con todos los ajustes avanzados', 'powershell -command "$d=[Environment]::GetFolderPath(\'Desktop\'); New-Item -Path ($d+\'\\\\GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}\') -ItemType Directory -EA SilentlyContinue; Write-Host God Mode creado"'),
         ('17.11 Prioridad primer plano', 'Mas recursos a la app activa', 'powershell -command "Set-ItemProperty \'HKLM:\\\\SYSTEM\\\\CurrentControlSet\\\\Control\\\\PriorityControl\' Win32PrioritySeparation 38"'),
@@ -347,18 +347,18 @@ CATEGORIES = [
         ('18.1 Test RAM — reiniciar ahora', 'Diagnostico completo de memoria (requiere reinicio)', 'mdsched.exe'),
         ('18.2 Test RAM — programar arranque', 'Programa el test en el proximo inicio sin reiniciar ya', 'mdsched.exe /s'),
         ('18.3 Resultado ultimo test RAM', 'Lee el resultado del ultimo test de memoria en el sistema', 'powershell -command "Get-WinEvent -LogName System | Where {$_.Id -eq 1101 -or $_.Id -eq 1102} | Select -First 5 | Format-List TimeCreated,Message"'),
-        ('18.4 WinSAT — Benchmark completo', 'Test oficial Microsoft: CPU+RAM+disco+graficos (~5 min)', 'winsat formal'),
-        ('18.5 WinSAT — solo CPU', 'Benchmark solo del procesador', 'winsat cpu'),
-        ('18.6 WinSAT — solo RAM', 'Benchmark solo de la memoria', 'winsat mem'),
-        ('18.7 WinSAT — solo disco C:', 'Benchmark velocidad disco C:', 'winsat disk -drive c'),
-        ('18.8 WinSAT — solo graficos 3D', 'Benchmark DirectX/3D de la GPU', 'winsat d3d'),
+        ('18.4 WinSAT — Benchmark completo', 'Test oficial Microsoft: CPU+RAM+disco+graficos (~5 min)', 'start cmd /k winsat formal'),
+        ('18.5 WinSAT — solo CPU', 'Benchmark solo del procesador', 'start cmd /k winsat cpu'),
+        ('18.6 WinSAT — solo RAM', 'Benchmark solo de la memoria', 'start cmd /k winsat mem'),
+        ('18.7 WinSAT — solo disco C:', 'Benchmark velocidad disco C:', 'start cmd /k winsat disk -drive c'),
+        ('18.8 WinSAT — solo graficos 3D', 'Benchmark DirectX/3D de la GPU', 'start cmd /k winsat d3d'),
         ('18.9 Ver puntuacion WinSAT (ultima)', 'Muestra el ultimo resultado sin volver a medir', 'powershell -command "Get-CimInstance Win32_WinSAT | Format-List"'),
         ('18.10 DxDiag — ventana completa', 'Info GPU, DirectX, audio y drivers', 'dxdiag'),
         ('18.11 DxDiag — exportar TXT escritorio', 'Genera informe DxDiag sin abrir ventana', 'dxdiag /t %USERPROFILE%\\Desktop\\dxdiag_informe.txt'),
         ('18.12 Info GPU (nombre y driver)', 'Datos de tarjeta grafica, driver y resolucion', 'powershell -command "Get-CimInstance Win32_VideoController | Select Name,DriverVersion,VideoModeDescription,CurrentRefreshRate | Format-List"'),
         ('18.13 GPU uso en tiempo real', 'Abre el Administrador de tareas en pestana GPU', 'taskmgr'),
         ('18.14 SMART estado discos', 'Estado de salud de discos fisicos', 'powershell -command "Get-PhysicalDisk | Select FriendlyName,HealthStatus,OperationalStatus,@{n=\'Size(GB)\';e={[math]::Round($_.Size/1GB,0)}} | Format-Table -AutoSize"'),
-        ('18.15 Test velocidad disco C: (WinSAT)', 'Velocidad real de lectura/escritura en disco C:', 'winsat disk -drive c'),
+        ('18.15 Test velocidad disco C: (WinSAT)', 'Velocidad real de lectura/escritura en disco C:', 'start cmd /k winsat disk -drive c'),
         ('18.16 Informe rendimiento (60 seg)', 'Analisis de 60s y genera informe HTML completo', 'perfmon /report'),
         ('18.17 Monitor de confiabilidad', 'Historial de errores y eventos del sistema', 'perfmon /rel'),
         ('18.18 Informe energia (perfmon)', 'Detecta problemas energeticos, genera HTML', 'powercfg /energy'),
@@ -525,7 +525,8 @@ class LoginWindow:
         from tkinter import filedialog
         all_cmds = {
             "version": "1.0",
-            "custom_commands": self.custom_cmds
+            "custom_commands": self.custom_cmds,
+            "favoritos": self.favs
         }
         path = filedialog.asksaveasfilename(
             defaultextension=".json",
@@ -558,6 +559,12 @@ class LoginWindow:
                     self.custom_cmds.append(c)
                     added += 1
             self._save_custom()
+            favs_imp = data.get("favoritos", [])
+            for f in favs_imp:
+                if f not in self.favs:
+                    self.favs.append(f)
+            if favs_imp:
+                self._save_favs()
             self._select_cat(self.current_cat)
             messagebox.showinfo("Importado", f"Se importaron {added} comandos nuevos.")
         except Exception as ex:
@@ -575,11 +582,11 @@ class LoginWindow:
 class App:
     def __init__(self):
         self.root = tk.Tk()
-        self.root.title("IT Tools — Centro de Comandos IT  v1.3")
+        self.root.title("IT Tools — Centro de Comandos IT  v1.4b")
         self.root.configure(bg=BG)
         self.root.geometry("1280x800")
         self.root.minsize(960, 640)
-        self.root.eval('tk::PlaceWindow . center')
+        self.root.state("zoomed")
 
         # Configurar estilos ttk
         style = ttk.Style()
@@ -688,7 +695,7 @@ class App:
             if sep:
                 btn.pack(fill="x", ipady=5, padx=4, before=sep)
             else:
-                btn.pack(fill="x", ipady=5, padx=4)
+                btn.pack(fill="x", ipady=7, padx=6)
             self.cat_btns.append(btn)
         idx = min(self.current_cat, len(CATEGORIES) - 1)
         self._select_cat(idx)
@@ -852,9 +859,10 @@ class App:
         root = self.root
 
         # ── TOPBAR ────────────────────────────────────────────
-        topbar = tk.Frame(root, bg=SURFACE, height=54)
+        topbar = tk.Frame(root, bg=SURFACE, height=58)
         topbar.pack(fill="x", side="top")
         topbar.pack_propagate(False)
+        tk.Frame(root, bg=CYAN, height=2).pack(fill="x", side="top")
 
         # Icono grande
         tk.Label(topbar, text="🛠", bg=SURFACE, fg=CYAN,
@@ -886,6 +894,10 @@ class App:
         _admin_txt = " ✔ ADMIN " if _is_admin() else " ● ADMIN "
         tk.Label(topbar, text=_admin_txt, bg=_admin_bg, fg=_admin_fg,
                  font=FONT_MB, relief="flat").pack(side="right", padx=8, pady=10)
+        tk.Button(topbar, text=" ❓ Ayuda", bg=SURFACE2, fg=MUTED,
+                  font=FONT_B, relief="flat", cursor="hand2", bd=0,
+                  activebackground=SURFACE2, activeforeground=TEXT, padx=8,
+                  command=self._show_help).pack(side="right", pady=10, padx=2)
 
         # Botón exportar/importar
         tk.Button(topbar, text="⬆ Export", bg=SURFACE2, fg=MUTED,
@@ -925,12 +937,12 @@ class App:
         body.pack(fill="both", expand=True)
 
         # Sidebar
-        self.sidebar = tk.Frame(body, bg=SURFACE, width=210)
+        self.sidebar = tk.Frame(body, bg=SURFACE, width=230)
         self.sidebar.pack(side="left", fill="y")
         self.sidebar.pack_propagate(False)
 
         tk.Label(self.sidebar, text="CATEGORÍAS", bg=SURFACE, fg="#3d4a60",
-                 font=("Segoe UI", 7, "bold")).pack(anchor="w", padx=12, pady=(10,2))
+                 font=("Segoe UI", 8, "bold")).pack(anchor="w", padx=14, pady=(12,4))
 
         self.cat_btns = []
         for i, cat in enumerate(CATEGORIES):
@@ -940,22 +952,23 @@ class App:
                             font=FONT, relief="flat", bd=0, anchor="w",
                             cursor="hand2", activebackground=SURFACE2,
                             command=lambda idx=i: self._select_cat(idx))
-            btn.pack(fill="x", ipady=5, padx=4)
+            btn.pack(fill="x", ipady=7, padx=6)
             self.cat_btns.append(btn)
 
-        tk.Frame(self.sidebar, bg=BORDER, height=1).pack(fill="x", padx=8, pady=8)
-        tk.Label(self.sidebar, text="ACCIONES", bg=SURFACE, fg="#3d4a60",
-                 font=("Segoe UI", 7, "bold")).pack(anchor="w", padx=12, pady=(0,2))
-
-        tk.Button(self.sidebar, text="  📊  Informe del equipo",
+        # Acciones ancladas al fondo del sidebar
+        bottom_frame = tk.Frame(self.sidebar, bg=SURFACE)
+        bottom_frame.pack(side="bottom", fill="x")
+        tk.Frame(bottom_frame, bg=BORDER, height=1).pack(fill="x", padx=10, pady=(10,6))
+        tk.Label(bottom_frame, text="ACCIONES", bg=SURFACE, fg="#3d4a60",
+                 font=("Segoe UI", 8, "bold")).pack(anchor="w", padx=14, pady=(0,4))
+        tk.Button(bottom_frame, text="  📊  Informe del equipo",
                   bg=SURFACE, fg=CYAN, font=FONT, relief="flat", bd=0, anchor="w",
                   cursor="hand2", activebackground=SURFACE2,
-                  command=self._informe_rapido).pack(fill="x", ipady=4, padx=4)
-
-        tk.Button(self.sidebar, text="  🗑  Limpiar terminal",
+                  command=self._informe_rapido).pack(fill="x", ipady=5, padx=6)
+        tk.Button(bottom_frame, text="  🗑  Limpiar terminal",
                   bg=SURFACE, fg=MUTED, font=FONT, relief="flat", bd=0, anchor="w",
                   cursor="hand2", activebackground=SURFACE2,
-                  command=self._clear_terminal).pack(fill="x", ipady=4, padx=4)
+                  command=self._clear_terminal).pack(fill="x", ipady=5, padx=6, pady=(0,8))
 
         # Separador vertical
         tk.Frame(body, bg=BORDER, width=1).pack(side="left", fill="y")
@@ -1139,8 +1152,13 @@ class App:
                  wraplength=220, justify="left", anchor="w").pack(fill="x", pady=(2,6))
 
         # Código
-        code_frame = tk.Frame(inner, bg="#080c14", highlightthickness=1, highlightbackground=BORDER)
+        code_frame = tk.Frame(inner, bg="#060a12", highlightthickness=1, highlightbackground=CYAN_DIM)
         code_frame.pack(fill="x", pady=(0,8))
+        _PH = ['USUARIO','TUDOMINIO','ADMIN','MiClave','TUSERVIDOR','EQUIPO']
+        if any(p in cmd for p in _PH):
+            tk.Label(inner, text="⚠  Edita los valores en MAYÚSCULAS antes de ejecutar",
+                     bg=SURFACE, fg="#facc15", font=FONT_XS, anchor="w"
+                     ).pack(fill="x", pady=(0,4))
         code_lbl = tk.Label(code_frame, text=cmd, bg="#080c14", fg=accent,
                             font=FONT_M, wraplength=220, justify="left", anchor="w",
                             cursor="xterm", padx=8, pady=4)
@@ -1216,27 +1234,30 @@ class App:
         bar = tk.Frame(tw, bg="#111827", cursor="fleur")
         bar.pack(fill="x")
 
-        dot_f = tk.Frame(bar, bg="#111827")
-        dot_f.pack(side="left", padx=10, pady=6)
-        # Rojo=cerrar, Amarillo=minimizar, Verde=topmost
-        btn_close = tk.Label(dot_f, text="●", bg="#111827", fg=RED,    font=("Segoe UI",11), cursor="hand2")
-        btn_min   = tk.Label(dot_f, text="●", bg="#111827", fg=YELLOW, font=("Segoe UI",11), cursor="hand2")
-        btn_top   = tk.Label(dot_f, text="●", bg="#111827", fg=GREEN,  font=("Segoe UI",11), cursor="hand2")
-        btn_close.pack(side="left", padx=2)
-        btn_min.pack(side="left",   padx=2)
-        btn_top.pack(side="left",   padx=2)
+        # 🗑 Papelera — izquierda
+        tk.Button(bar, text="🗑", bg="#111827", fg=MUTED, relief="flat", bd=0,
+                  cursor="hand2", font=FONT, activebackground="#1e2d45",
+                  command=self._clear_terminal).pack(side="left", padx=(8,0), pady=4)
 
-        btn_close.bind("<Button-1>", lambda e: self._hide_terminal())
-        btn_min.bind("<Button-1>",   lambda e: self._minimize_terminal())
-        btn_top.bind("<Button-1>",   lambda e: self._toggle_topmost())
-
+        # Título — centro
         self.term_title_lbl = tk.Label(bar, text="▶ Terminal CMD — IT Tools",
                                         bg="#111827", fg="#5a6a88", font=FONT_M)
-        self.term_title_lbl.pack(side="left", padx=8)
+        self.term_title_lbl.pack(side="left", padx=10)
 
-        tk.Button(bar, text="🗑", bg="#111827", fg=MUTED, relief="flat", bd=0,
-                  cursor="hand2", font=FONT,
-                  command=self._clear_terminal).pack(side="right", padx=6, pady=3)
+        # ✕ Cerrar — derecha
+        btn_close = tk.Label(bar, text=" ✕ ", bg="#111827", fg=MUTED,
+                             font=("Segoe UI", 11, "bold"), cursor="hand2")
+        btn_close.pack(side="right", padx=(0,6), pady=4)
+        btn_close.bind("<Button-1>",  lambda e: self._hide_terminal())
+        btn_close.bind("<Enter>",     lambda e: btn_close.config(fg=RED, bg="#2a1520"))
+        btn_close.bind("<Leave>",     lambda e: btn_close.config(fg=MUTED, bg="#111827"))
+
+        # 📌 Topmost — derecha (junto a X)
+        self.btn_top_lbl = tk.Label(bar, text=" 📌 ", bg="#111827", fg=MUTED,
+                                     font=("Segoe UI", 10), cursor="hand2")
+        self.btn_top_lbl.pack(side="right", padx=2, pady=4)
+        self.btn_top_lbl.bind("<Button-1>", lambda e: self._toggle_topmost())
+        Tooltip(self.btn_top_lbl, "Mantener siempre encima")
 
         # Drag to move
         bar.bind("<ButtonPress-1>",  self._term_drag_start)
@@ -1309,6 +1330,8 @@ class App:
     def _toggle_topmost(self):
         self._term_topmost = not self._term_topmost
         self.term_win.attributes("-topmost", self._term_topmost)
+        if hasattr(self, "btn_top_lbl"):
+            self.btn_top_lbl.config(fg=CYAN if self._term_topmost else MUTED)
 
 
     def _export_terminal(self):
@@ -1582,6 +1605,12 @@ class App:
                 "cmd": cmd, "cat": cid
             })
             self._save_custom()
+            favs_imp = data.get("favoritos", [])
+            for f in favs_imp:
+                if f not in self.favs:
+                    self.favs.append(f)
+            if favs_imp:
+                self._save_favs()
             self._select_cat(self.current_cat)
             dlg.destroy()
 
@@ -1603,7 +1632,8 @@ class App:
         from tkinter import filedialog
         all_cmds = {
             "version": "1.0",
-            "custom_commands": self.custom_cmds
+            "custom_commands": self.custom_cmds,
+            "favoritos": self.favs
         }
         path = filedialog.asksaveasfilename(
             defaultextension=".json",
@@ -1648,6 +1678,92 @@ class App:
 # ══════════════════════════════════════════════════════════════
 # MAIN
 # ══════════════════════════════════════════════════════════════
+    def _show_help(self):
+        """Ventana de ayuda con scroll propio."""
+        dlg = tk.Toplevel(self.root)
+        dlg.title("Ayuda — IT Tools")
+        dlg.configure(bg=BG)
+        dlg.geometry("580x540")
+        dlg.resizable(True, True)
+        dlg.transient(self.root)
+        dlg.grab_set()
+        dlg.attributes("-topmost", True)
+
+        # Título fijo (fuera del scroll)
+        top = tk.Frame(dlg, bg=BG)
+        top.pack(fill="x", padx=24, pady=(18,0))
+        tk.Label(top, text="❓  Ayuda — IT Tools v1.4b", bg=BG, fg=CYAN,
+                 font=("Segoe UI", 14, "bold")).pack(anchor="w")
+        tk.Frame(dlg, bg=CYAN, height=2).pack(fill="x", padx=24, pady=(6,0))
+
+        # Canvas + scrollbar para el contenido
+        wrapper = tk.Frame(dlg, bg=BG)
+        wrapper.pack(fill="both", expand=True, padx=4, pady=4)
+
+        canvas = tk.Canvas(wrapper, bg=BG, highlightthickness=0)
+        sb = tk.Scrollbar(wrapper, orient="vertical", command=canvas.yview)
+        canvas.configure(yscrollcommand=sb.set)
+        sb.pack(side="right", fill="y")
+        canvas.pack(side="left", fill="both", expand=True)
+
+        inner = tk.Frame(canvas, bg=BG)
+        win_id = canvas.create_window((0, 0), window=inner, anchor="nw")
+
+        def _on_resize(e):
+            canvas.itemconfig(win_id, width=e.width)
+        canvas.bind("<Configure>", _on_resize)
+
+        def _on_frame_configure(e):
+            canvas.configure(scrollregion=canvas.bbox("all"))
+        inner.bind("<Configure>", _on_frame_configure)
+
+        # Scroll con rueda — SOLO en esta ventana, no propaga a la app
+        def _on_mousewheel(e):
+            canvas.yview_scroll(int(-1*(e.delta/120)), "units")
+            return "break"
+        canvas.bind("<MouseWheel>", _on_mousewheel)
+        inner.bind("<MouseWheel>", _on_mousewheel)
+
+        sections = [
+            ("🖥  Terminal interno vs CMD del sistema", CYAN,
+             "Los comandos de diagnóstico rápido (ipconfig, netstat, tasklist…) se ejecutan "
+             "en el terminal interno de IT Tools para ver el resultado al momento.\n\n"
+             "Los comandos lentos o interactivos (DISM, SFC, chkdsk, defrag, WinSAT…) se abren "
+             "en una ventana CMD independiente del sistema para evitar bloqueos por timeout y "
+             "poder ver el progreso en tiempo real."),
+            ("⭐  Favoritos, Export e Import", YELLOW,
+             "Pulsa ☆ en cualquier tarjeta de comando para marcarlo como favorito. "
+             "Los favoritos aparecen en la categoría ⭐ Favoritos al inicio del menú lateral.\n\n"
+             "▶  Export: guarda todos tus comandos personalizados y favoritos en un archivo JSON.\n"
+             "▶  Import: carga ese JSON en otro equipo para tener la misma configuración."),
+            ("🛡  Badge ADMIN (esquina superior derecha)", GREEN,
+             "Indica si IT Tools está corriendo con permisos de Administrador de Windows.\n\n"
+             "✔ ADMIN (fondo azul) → Con permisos. Todos los comandos funcionarán correctamente.\n"
+             "● ADMIN (oscuro)      → Sin permisos. Algunos comandos darán Error código: 1.\n\n"
+             "Para ejecutar como Admin: clic derecho en el .exe o .py → Ejecutar como administrador."),
+            ("⚠  Comandos con MAYÚSCULAS", YELLOW,
+             "Algunos comandos contienen valores en mayúsculas como USUARIO, TUDOMINIO o MiClave "
+             "que debes editar antes de ejecutar. Aparecerá un aviso amarillo en la tarjeta.\n\n"
+             "Edita el valor directamente en el campo del terminal interno antes de pulsar Enter."),
+        ]
+
+        for title, color, body in sections:
+            tk.Label(inner, text=title, bg=BG, fg=color,
+                     font=("Segoe UI", 11, "bold"), anchor="w"
+                     ).pack(fill="x", padx=20, pady=(14,4))
+            lbl = tk.Label(inner, text=body, bg=SURFACE, fg=TEXT,
+                           font=("Segoe UI", 10), wraplength=520,
+                           justify="left", anchor="nw", padx=14, pady=12)
+            lbl.pack(fill="x", padx=20)
+            lbl.bind("<MouseWheel>", _on_mousewheel)
+
+        # Botón cerrar fijo abajo
+        tk.Button(dlg, text="  Cerrar  ", bg=CYAN, fg="#000", font=FONT_B,
+                  relief="flat", bd=0, cursor="hand2", pady=6,
+                  activebackground="#0096b4",
+                  command=dlg.destroy).pack(pady=12)
+
+
 def main():
     _elevate()
     SplashScreen().show()

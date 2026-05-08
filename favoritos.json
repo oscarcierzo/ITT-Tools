@@ -1,0 +1,12 @@
+[
+  {
+    "name": "2.1 Información del sistema",
+    "desc": "Detalle completo de hardware y SO",
+    "cmd": "systeminfo"
+  },
+  {
+    "name": "2.4 Hostname",
+    "desc": "Nombre del equipo en la red",
+    "cmd": "hostname"
+  }
+]
