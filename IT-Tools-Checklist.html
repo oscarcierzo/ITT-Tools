@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>IT Tools — Checklist de Comandos</title>
+<style>
+  @page { size: A4; margin: 12mm 10mm; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 7.5pt; color: #111; background: #fff; }
+
+  .header { display: flex; justify-content: space-between; align-items: center;
+             border-bottom: 2px solid #0ea5e9; padding-bottom: 4px; margin-bottom: 6px; }
+  .header h1 { font-size: 13pt; color: #0ea5e9; }
+  .header .meta { font-size: 7pt; color: #555; text-align: right; }
+
+  table { width: 100%; border-collapse: collapse; }
+  td, th { padding: 1.8px 4px; vertical-align: middle; }
+
+  tr.cat-row td {
+    background: #0ea5e9; color: #fff;
+    font-weight: bold; font-size: 8pt;
+    padding: 3px 5px;
+    page-break-after: avoid;
+  }
+
+  tr:not(.cat-row):nth-child(even) td { background: #f0f8ff; }
+  tr:not(.cat-row) td { border-bottom: 1px solid #e2e8f0; }
+
+  .check { width: 14px; text-align: center; }
+  .check input { width: 10px; height: 10px; cursor: pointer; }
+  .name { width: 38%; font-weight: 600; color: #1e3a5f; }
+  .desc { color: #444; }
+
+  .footer { margin-top: 6px; text-align: center; font-size: 6.5pt; color: #999;
+             border-top: 1px solid #ddd; padding-top: 3px; }
+
+  @media print {
+    .check input { -webkit-appearance: none; border: 1px solid #999;
+                    width: 9px; height: 9px; display: inline-block; }
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>🛠 IT Tools — Checklist de comandos</h1>
+  <div class="meta">
+    Total: <strong>252 comandos</strong> · 18 categorías<br>
+    by Oscarcierzo
+  </div>
+</div>
+
+<table>
+
+    <tr class="cat-row">
+      <td colspan="3">🖥  Sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.1 Información del sistema</td>
+      <td class="desc">Detalle completo de hardware y SO</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.2 Versión de Windows</td>
+      <td class="desc">Abre ventana de versión del SO</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.3 Variables de entorno</td>
+      <td class="desc">Lista todas las variables de entorno</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.4 Hostname</td>
+      <td class="desc">Nombre del equipo en la red</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.5 Fecha y hora</td>
+      <td class="desc">Fecha y hora del sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.6 Info BIOS / Placa base</td>
+      <td class="desc">Datos de BIOS vía WMI</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.7 Número de serie equipo</td>
+      <td class="desc">Serie del hardware</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.8 Procesador</td>
+      <td class="desc">Nombre, núcleos y frecuencia del CPU</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.9 Memoria RAM</td>
+      <td class="desc">RAM total y disponible</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.10 Apagar equipo</td>
+      <td class="desc">Apaga el equipo inmediatamente</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.11 Reiniciar equipo</td>
+      <td class="desc">Reinicia el equipo inmediatamente</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.12 Cerrar sesión</td>
+      <td class="desc">Cierra la sesión actual</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.13 Visor de eventos</td>
+      <td class="desc">Abre el visor de eventos</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.14 Panel de control</td>
+      <td class="desc">Panel de control clásico</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.15 Abrir carpeta TEMP usuario</td>
+      <td class="desc">Abre %temp% en el explorador</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.16 Abrir carpeta TEMP Windows</td>
+      <td class="desc">Abre C:\\Windows\\Temp</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.17 Borrar TEMP usuario</td>
+      <td class="desc">Elimina archivos temporales del usuario</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.18 Borrar TEMP Windows</td>
+      <td class="desc">Elimina temporales del sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.19 Configuración Windows</td>
+      <td class="desc">Abre la app Configuración moderna</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.20 Licencia Windows (estado)</td>
+      <td class="desc">Estado activacion y ultimos 5 digitos clave</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.21 Clave producto OEM (BIOS)</td>
+      <td class="desc">Lee la clave OEM embebida en la BIOS</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.22 ID AnyDesk</td>
+      <td class="desc">Lee la ID de AnyDesk del registro</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.23 ID TeamViewer</td>
+      <td class="desc">Lee la ID de TeamViewer del registro</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">2.24 Exportar informe sistema TXT</td>
+      <td class="desc">Genera informe completo en el escritorio</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">💾  Discos</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">3.1 Espacio en discos</td>
+      <td class="desc">Espacio libre y total de cada unidad</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">3.2 Verificar disco CHKDSK</td>
+      <td class="desc">Verifica y repara disco C: al reiniciar</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">3.3 SFC — Reparar sistema</td>
+      <td class="desc">Escanea archivos protegidos del sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">3.4 DISM — Reparar imagen</td>
+      <td class="desc">Repara imagen de Windows vía WU</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">3.5 Defragmentar disco C:</td>
+      <td class="desc">Desfragmenta la unidad C:</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">3.6 Gestor de discos (GUI)</td>
+      <td class="desc">Abre administración de discos</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">3.7 Liberar espacio disco</td>
+      <td class="desc">Limpieza de archivos innecesarios</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">3.8 Información de volúmenes</td>
+      <td class="desc">Detalles de todos los volúmenes</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">3.9 Disco físico info</td>
+      <td class="desc">Información de discos físicos</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">3.10 Estado SMART disco</td>
+      <td class="desc">Estado SMART del disco duro</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">3.11 Limpieza almacenamiento</td>
+      <td class="desc">Storage Sense de Windows</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">🌐  Red / Internet</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.1 Configuración IP completa</td>
+      <td class="desc">IP, máscara, gateway, DNS, MAC</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.2 Ping a Google DNS</td>
+      <td class="desc">Test conectividad (4 paquetes)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.3 Ping continuo</td>
+      <td class="desc">Ping hasta Ctrl+C</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.4 Traceroute</td>
+      <td class="desc">Traza ruta de paquetes hasta destino</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.5 Conexiones activas</td>
+      <td class="desc">Conexiones, puertos y PIDs activos</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.6 Puertos en escucha</td>
+      <td class="desc">Solo puertos TCP en LISTENING</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.7 Tabla ARP</td>
+      <td class="desc">IPs y MACs en la red local</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.8 Tabla de rutas</td>
+      <td class="desc">Tabla de enrutamiento del sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.9 Vaciar caché DNS</td>
+      <td class="desc">Limpia el caché DNS del sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.10 Renovar IP DHCP</td>
+      <td class="desc">Libera y renueva la concesión DHCP</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.11 Resolución DNS</td>
+      <td class="desc">Resuelve dominio a IP</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.12 Red WiFi activa</td>
+      <td class="desc">SSID y estado de la WiFi actual</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.13 Redes WiFi guardadas</td>
+      <td class="desc">Lista todos los perfiles WiFi</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.14 Estado Firewall</td>
+      <td class="desc">Estado del Firewall de Windows</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.15 Deshabilitar Firewall</td>
+      <td class="desc">Desactiva Firewall en todos los perfiles</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.16 Habilitar Firewall</td>
+      <td class="desc">Activa Firewall en todos los perfiles</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.17 Reset Winsock + IP</td>
+      <td class="desc">Reinicia pila TCP/IP y Winsock</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">4.18 Adaptadores de red (GUI)</td>
+      <td class="desc">Panel de conexiones de red</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">👤  Usuarios</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">5.1 Listar usuarios locales</td>
+      <td class="desc">Todos los usuarios del sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">5.2 Detalle usuario actual</td>
+      <td class="desc">Info del usuario activo</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">5.3 Crear usuario local</td>
+      <td class="desc">Crea nuevo usuario (edita antes)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">5.4 Eliminar usuario</td>
+      <td class="desc">Elimina usuario local</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">5.5 Añadir a Administradores</td>
+      <td class="desc">Agrega usuario al grupo Admin</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">5.6 Listar grupos locales</td>
+      <td class="desc">Lista todos los grupos</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">5.7 Usuarios del grupo Admin</td>
+      <td class="desc">Miembros de Administradores</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">5.8 whoami — usuario actual</td>
+      <td class="desc">Usuario, dominio y permisos SID</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">5.9 Habilitar cuenta Admin</td>
+      <td class="desc">Activa el Administrador integrado</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">5.10 Sesiones activas</td>
+      <td class="desc">Sesiones de usuarios en el sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">5.11 Política de contraseñas</td>
+      <td class="desc">Reglas de contraseñas y bloqueo</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">5.12 Cuentas de usuario (GUI)</td>
+      <td class="desc">Gestión de cuentas local</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">⚙️  Procesos</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">6.1 Lista de procesos</td>
+      <td class="desc">Todos los procesos con PID y memoria</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">6.2 Procesos con ruta EXE</td>
+      <td class="desc">Lista procesos con ruta del ejecutable</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">6.3 Matar proceso por nombre</td>
+      <td class="desc">Terminar proceso (edita el nombre)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">6.4 Matar proceso por PID</td>
+      <td class="desc">Terminar por PID (edita el número)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">6.5 Lista de servicios</td>
+      <td class="desc">Todos los servicios y su estado</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">6.6 Servicios en ejecución</td>
+      <td class="desc">Solo servicios activos</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">6.7 Iniciar servicio</td>
+      <td class="desc">Inicia servicio (edita nombre)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">6.8 Detener servicio</td>
+      <td class="desc">Detiene servicio (edita nombre)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">6.9 Administrador de tareas</td>
+      <td class="desc">Abre el Task Manager</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">6.10 Monitor de recursos</td>
+      <td class="desc">Monitor de recursos avanzado</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">6.11 Monitor de rendimiento</td>
+      <td class="desc">Perfmon completo</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">6.12 Consola de servicios</td>
+      <td class="desc">Gestión gráfica de servicios</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">6.13 Programador de tareas</td>
+      <td class="desc">Tareas programadas del sistema</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">🚀  Boot / Arranque</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">7.1 Ver configuración BCD</td>
+      <td class="desc">Todas las entradas del gestor de arranque</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">7.2 Configuración arranque</td>
+      <td class="desc">msconfig — inicio y servicios</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">7.3 Modificar timeout boot (5s)</td>
+      <td class="desc">5 segundos de espera en menú arranque</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">7.4 Reparar BCD</td>
+      <td class="desc">Reconstruye el BCD desde cero</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">7.5 Reparar MBR</td>
+      <td class="desc">Repara el Master Boot Record</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">7.6 Reparar sector arranque</td>
+      <td class="desc">Escribe nuevo sector de arranque</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">7.7 Activar modo seguro</td>
+      <td class="desc">Próximo inicio en Modo Seguro</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">7.8 Desactivar modo seguro</td>
+      <td class="desc">Elimina opción safeboot del BCD</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">7.9 Activar hibernación</td>
+      <td class="desc">Habilita hibernación en Windows</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">7.10 Desactivar hibernación</td>
+      <td class="desc">Deshabilita hibernate + borra hiberfil.sys</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">7.11 Plan de energía activo</td>
+      <td class="desc">Muestra el esquema de energía actual</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">7.12 Entorno recuperación (WinRE)</td>
+      <td class="desc">Reinicia en Entorno de Recuperación</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">📝  Registro</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">8.1 Editor de registro</td>
+      <td class="desc">Abre regedit</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">8.2 Exportar clave registro</td>
+      <td class="desc">Exporta clave a archivo .reg</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">8.3 Importar archivo .reg</td>
+      <td class="desc">Importa .reg al registro</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">8.4 Consultar clave</td>
+      <td class="desc">Lee valor específico del registro</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">8.5 Buscar en registro</td>
+      <td class="desc">Busca texto en todo el registro</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">8.6 Programas inicio (usuario)</td>
+      <td class="desc">Inicio automático del usuario</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">8.7 Programas inicio (sistema)</td>
+      <td class="desc">Inicio automático del sistema</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">🔒  Seguridad</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">9.1 Política seguridad local</td>
+      <td class="desc">Editor de directivas de seguridad</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">9.2 Directivas de grupo GPO</td>
+      <td class="desc">Editor GPO local</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">9.3 Certificados sistema</td>
+      <td class="desc">Administrador de certificados del equipo</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">9.4 Certificados usuario</td>
+      <td class="desc">Certificados del usuario actual</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">9.5 Permisos NTFS (icacls)</td>
+      <td class="desc">Permisos de una carpeta</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">9.6 Defender — escaneo rápido</td>
+      <td class="desc">Escaneo rápido de Windows Defender</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">9.7 Defender — escaneo completo</td>
+      <td class="desc">Escaneo completo del sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">9.8 Usuarios con sesión abierta</td>
+      <td class="desc">Sesiones interactivas activas</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">🏢  Active Directory</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.1 Info del dominio</td>
+      <td class="desc">Nombre y controladores del dominio</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.2 Controladores de dominio</td>
+      <td class="desc">Lista los DCs del dominio actual</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.3 DC principal (PDC)</td>
+      <td class="desc">Localiza el DC con rol PDC</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.4 Roles FSMO</td>
+      <td class="desc">Todos los roles FSMO del dominio</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.5 Equipos del dominio</td>
+      <td class="desc">Lista equipos unidos al dominio</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.6 Servidores del dominio</td>
+      <td class="desc">Lista servidores del dominio</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.7 Info usuario AD</td>
+      <td class="desc">Detalles del usuario actual en AD</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.8 Grupos del usuario (AD)</td>
+      <td class="desc">Grupos AD del usuario actual</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.9 Grupos del dominio</td>
+      <td class="desc">Todos los grupos globales del dominio</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.10 Admins del dominio</td>
+      <td class="desc">Miembros del grupo Domain Admins</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.11 Unir equipo al dominio</td>
+      <td class="desc">Comando base para unir al dominio</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.12 Expulsar del dominio</td>
+      <td class="desc">Elimina el equipo del dominio</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.13 Sincronizar hora con DC</td>
+      <td class="desc">Sincroniza el reloj con el dominio</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.14 Estado sincronización hora</td>
+      <td class="desc">Diagnóstico de sincronización NTP</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.15 Política de grupo (gpupdate)</td>
+      <td class="desc">Fuerza actualización de GPOs</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.16 Resultado GPO aplicada</td>
+      <td class="desc">GPOs aplicadas al usuario/equipo</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.17 Usuarios y Equipos AD</td>
+      <td class="desc">Consola ADUC (requiere RSAT)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.18 DNS Manager</td>
+      <td class="desc">Consola DNS (requiere RSAT)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">10.19 Sites y Servicios AD</td>
+      <td class="desc">Consola Sites and Services</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">🖨  Impresoras</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">11.1 Lista de impresoras</td>
+      <td class="desc">Impresoras instaladas en el sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">11.2 Impresora predeterminada</td>
+      <td class="desc">Nombre de la impresora por defecto</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">11.3 Estado de impresoras</td>
+      <td class="desc">Estado de todas las impresoras</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">11.4 Cola de impresión</td>
+      <td class="desc">Trabajos pendientes de impresión</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">11.5 Cancelar todos los trabajos</td>
+      <td class="desc">Limpia la cola de impresión</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">11.6 Reiniciar Spooler</td>
+      <td class="desc">Reinicia el servicio de impresión</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">11.7 Borrar caché spooler</td>
+      <td class="desc">Elimina trabajos atascados del spooler</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">11.8 Panel de impresoras</td>
+      <td class="desc">Abre dispositivos e impresoras</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">11.9 Gestor de impresión (GUI)</td>
+      <td class="desc">Print Management Console</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">11.10 Puertos de impresora</td>
+      <td class="desc">Lista los puertos de impresoras</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">11.11 Drivers de impresora</td>
+      <td class="desc">Drivers instalados de impresoras</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">Exportar lista impresoras CSV</td>
+      <td class="desc">Exporta lista a CSV y abre Notepad</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">11.12 Exportar config impresoras</td>
+      <td class="desc">Backup completo impresoras con PrintBRM (Admin requerido)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">11.13 Importar config impresoras</td>
+      <td class="desc">Restaurar backup impresoras con PrintBRM</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">Abrir asistente impresoras</td>
+      <td class="desc">GUI exportar/importar impresoras (printbrmui)</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">🔄  Windows Update</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">12.1 Buscar actualizaciones</td>
+      <td class="desc">Abre Windows Update</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">12.2 Buscar actualizaciones (PS)</td>
+      <td class="desc">Fuerza busqueda de actualizaciones por PowerShell</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">12.3 Instalar todas las updates</td>
+      <td class="desc">Descarga e instala todas las actualizaciones pendientes</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">12.4 Historial de actualizaciones</td>
+      <td class="desc">Lista las ultimas actualizaciones instaladas</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">12.5 Actualizaciones pendientes (PS)</td>
+      <td class="desc">Lista updates pendientes sin instalar</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">12.6 Pausar WU 7 dias</td>
+      <td class="desc">Pausa Windows Update durante 7 dias</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">12.7 Reanudar Windows Update</td>
+      <td class="desc">Quita la pausa de Windows Update</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">12.8 Reiniciar servicio WU</td>
+      <td class="desc">Detiene y reinicia el servicio de Windows Update</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">12.9 Borrar cache de Windows Update</td>
+      <td class="desc">Limpia SoftwareDistribution y reinicia WU</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">12.10 Desactivar actualizaciones auto</td>
+      <td class="desc">Deshabilita Windows Update automatico (GPO)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">12.11 Activar actualizaciones auto</td>
+      <td class="desc">Reactiva Windows Update automatico</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">12.12 Hotfixes instalados (lista)</td>
+      <td class="desc">Todos los parches KB instalados en el sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">12.13 Configuracion Windows Update</td>
+      <td class="desc">Panel de configuracion de Windows Update</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">🖥  RDP / Remoto</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">13.1 Habilitar RDP</td>
+      <td class="desc">Activa el escritorio remoto en este equipo</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">13.2 Deshabilitar RDP</td>
+      <td class="desc">Desactiva el escritorio remoto</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">13.3 Estado RDP</td>
+      <td class="desc">Comprueba si RDP esta habilitado</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">13.4 Ver sesiones activas RDP</td>
+      <td class="desc">Lista todas las sesiones de usuario activas</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">13.5 Ver usuarios conectados</td>
+      <td class="desc">Usuarios con sesion abierta en el equipo</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">13.6 Conectar por RDP a equipo</td>
+      <td class="desc">Abre el cliente RDP (mstsc)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">13.7 Cerrar sesion RDP por ID</td>
+      <td class="desc">Cierra una sesion por su ID (logoff ID)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">13.8 Puerto RDP actual</td>
+      <td class="desc">Muestra el puerto configurado para RDP</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">13.9 Cambiar puerto RDP a 3389</td>
+      <td class="desc">Restaura el puerto RDP al valor por defecto</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">13.10 Firewall — abrir puerto RDP</td>
+      <td class="desc">Abre el puerto 3389 en el firewall</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">13.11 Configuracion acceso remoto</td>
+      <td class="desc">Panel de acceso remoto de Windows</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">13.12 Credenciales guardadas RDP</td>
+      <td class="desc">Gestiona credenciales almacenadas</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">13.13 Timeouts RDP idle=30 disc=60 active=480</td>
+      <td class="desc">Aplica timeouts: inactivo=30min desconectado=60min activo=8h EndOnLimit=On</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">📦  Inventario</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">14.1 Inventario hardware completo</td>
+      <td class="desc">CPU, RAM, disco, GPU, placa, BIOS en un informe</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">14.2 Software instalado (lista)</td>
+      <td class="desc">Todos los programas instalados con version</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">14.3 Software instalado (32bit)</td>
+      <td class="desc">Programas de 32 bits en sistema 64 bits</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">14.4 Exportar software a CSV</td>
+      <td class="desc">Guarda lista de programas en el escritorio</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">14.5 Drivers instalados</td>
+      <td class="desc">Lista todos los drivers del sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">14.6 Drivers firmados (driverquery)</td>
+      <td class="desc">Lista drivers con estado y firma</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">14.7 Hotfixes instalados</td>
+      <td class="desc">Parches KB con fecha de instalacion</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">14.8 Exportar hotfixes a CSV</td>
+      <td class="desc">Guarda parches KB en CSV en el escritorio</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">14.9 Exportar hardware a TXT</td>
+      <td class="desc">Informe completo de hardware en el escritorio</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">14.10 Servicios instalados</td>
+      <td class="desc">Lista todos los servicios del sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">14.11 Tareas programadas activas</td>
+      <td class="desc">Muestra tareas del programador activas</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">14.12 msinfo32 — Info del sistema</td>
+      <td class="desc">Herramienta nativa de informacion de sistema</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">🌍  DNS / Puertos</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.1 nslookup dominio</td>
+      <td class="desc">Resolucion DNS de un dominio (edita el comando)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.2 Test DNS rapido (8.8.8.8)</td>
+      <td class="desc">Resolucion usando Google DNS</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.3 Test DNS Cloudflare (1.1.1.1)</td>
+      <td class="desc">Resolucion usando Cloudflare DNS</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.4 Registros MX de dominio</td>
+      <td class="desc">Consulta registros de correo de un dominio</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.5 Registros A de dominio</td>
+      <td class="desc">Consulta IPs de un dominio</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.6 Limpiar cache DNS</td>
+      <td class="desc">Vacia la cache DNS local</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.7 Ver cache DNS local</td>
+      <td class="desc">Muestra entradas en cache DNS del sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.8 Test puerto TCP (Test-NetConn)</td>
+      <td class="desc">Comprueba si un puerto esta abierto</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.9 Escanear puertos locales abiertos</td>
+      <td class="desc">Lista puertos TCP en escucha</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.10 Tracert a Google</td>
+      <td class="desc">Traza la ruta hasta Google</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.11 Ruta IP (route print)</td>
+      <td class="desc">Tabla de enrutamiento del sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.12 IP publica (via PS)</td>
+      <td class="desc">Obtiene la IP publica actual</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.13 Conexiones activas (netstat)</td>
+      <td class="desc">Conexiones TCP/UDP activas con procesos</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.14 Estadisticas de red</td>
+      <td class="desc">Estadisticas TCP/IP del adaptador</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.15 Configuracion DNS adaptadores</td>
+      <td class="desc">DNS asignado a cada adaptador de red</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.16 Cambiar DNS a Google (8.8.8.8)</td>
+      <td class="desc">Establece Google DNS en todos los adaptadores</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.17 Cambiar DNS a Cloudflare</td>
+      <td class="desc">Establece Cloudflare DNS (1.1.1.1)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">15.18 Restablecer DNS automatico</td>
+      <td class="desc">Vuelve a DNS por DHCP en todos los adaptadores</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">🔧  Reparaciones</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">16.1 DISM + SFC seguidos</td>
+      <td class="desc">Repara imagen y archivos del sistema en secuencia</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">16.2 DISM — RestoreHealth</td>
+      <td class="desc">Repara imagen de Windows (solo DISM)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">16.3 SFC — Escanear sistema</td>
+      <td class="desc">Verifica y repara archivos protegidos</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">16.4 Reparar Windows Update</td>
+      <td class="desc">Para WU, borra cache y reinicia servicios</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">16.5 Reparar red completa</td>
+      <td class="desc">Winsock + TCP/IP + DHCP + DNS + ARP</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">16.6 Reiniciar spooler impresion</td>
+      <td class="desc">Limpia cola y reinicia servicio de impresion</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">16.7 Limpiar TEMP + Prefetch</td>
+      <td class="desc">Borra archivos temporales y prefetch</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">16.8 Reparar arranque BCD</td>
+      <td class="desc">bootrec rebuildbcd + fixmbr + fixboot</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">16.9 Forzar chkdsk C: al arranque</td>
+      <td class="desc">Programa verificacion de disco en reinicio</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">16.10 Limpiar DNS + cache ARP</td>
+      <td class="desc">Limpia DNS local y tabla ARP</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">16.11 Vaciar Papelera (silencioso)</td>
+      <td class="desc">Vacia la papelera sin confirmacion</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">16.12 Reinstalar tienda Windows</td>
+      <td class="desc">Reinstala Microsoft Store y apps base</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">⚡  Optimización</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">17.1 Plan maximo rendimiento</td>
+      <td class="desc">Activa High Performance</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">17.2 Plan equilibrado</td>
+      <td class="desc">Vuelve al plan Balanced por defecto</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">17.3 Plan ahorro energia</td>
+      <td class="desc">Activa plan Power Saver</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">17.4 Desactivar SysMain/Superfetch</td>
+      <td class="desc">Recomendable en SSD</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">17.5 Activar SysMain/Superfetch</td>
+      <td class="desc">Reactiva Superfetch para HDD</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">17.6 Efectos visuales rendimiento</td>
+      <td class="desc">Modo mejor rendimiento sin animaciones</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">17.7 Efectos visuales apariencia</td>
+      <td class="desc">Restaura efectos visuales completos</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">17.8 Desactivar telemetria</td>
+      <td class="desc">Para DiagTrack y dmwappushservice</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">17.9 Activar TRIM SSD</td>
+      <td class="desc">Habilita TRIM en todas las unidades</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">17.10 God Mode en escritorio</td>
+      <td class="desc">Carpeta con todos los ajustes avanzados</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">17.11 Prioridad primer plano</td>
+      <td class="desc">Mas recursos a la app activa</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">17.12 Apps en inicio de Windows</td>
+      <td class="desc">Gestiona que apps arrancan con Windows</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">17.13 Opciones de energia</td>
+      <td class="desc">Panel de configuracion de energia</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">🧪  Tests & Diagnóstico</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.1 Test RAM — reiniciar ahora</td>
+      <td class="desc">Diagnostico completo de memoria (requiere reinicio)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.2 Test RAM — programar arranque</td>
+      <td class="desc">Programa el test en el proximo inicio sin reiniciar ya</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.3 Resultado ultimo test RAM</td>
+      <td class="desc">Lee el resultado del ultimo test de memoria en el sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.4 WinSAT — Benchmark completo</td>
+      <td class="desc">Test oficial Microsoft: CPU+RAM+disco+graficos (~5 min)</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.5 WinSAT — solo CPU</td>
+      <td class="desc">Benchmark solo del procesador</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.6 WinSAT — solo RAM</td>
+      <td class="desc">Benchmark solo de la memoria</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.7 WinSAT — solo disco C:</td>
+      <td class="desc">Benchmark velocidad disco C:</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.8 WinSAT — solo graficos 3D</td>
+      <td class="desc">Benchmark DirectX/3D de la GPU</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.9 Ver puntuacion WinSAT (ultima)</td>
+      <td class="desc">Muestra el ultimo resultado sin volver a medir</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.10 DxDiag — ventana completa</td>
+      <td class="desc">Info GPU, DirectX, audio y drivers</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.11 DxDiag — exportar TXT escritorio</td>
+      <td class="desc">Genera informe DxDiag sin abrir ventana</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.12 Info GPU (nombre y driver)</td>
+      <td class="desc">Datos de tarjeta grafica, driver y resolucion</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.13 GPU uso en tiempo real</td>
+      <td class="desc">Abre el Administrador de tareas en pestana GPU</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.14 SMART estado discos</td>
+      <td class="desc">Estado de salud de discos fisicos</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.15 Test velocidad disco C: (WinSAT)</td>
+      <td class="desc">Velocidad real de lectura/escritura en disco C:</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.16 Informe rendimiento (60 seg)</td>
+      <td class="desc">Analisis de 60s y genera informe HTML completo</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.17 Monitor de confiabilidad</td>
+      <td class="desc">Historial de errores y eventos del sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.18 Informe energia (perfmon)</td>
+      <td class="desc">Detecta problemas energeticos, genera HTML</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.19 Informe bateria (portatiles)</td>
+      <td class="desc">Estado y degradacion de la bateria</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.20 Info hardware completo (msinfo32)</td>
+      <td class="desc">Toda la informacion de hardware en una ventana</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.21 Monitor de rendimiento (GUI)</td>
+      <td class="desc">Abre el monitor de rendimiento de Windows</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">18.22 Administrador de tareas</td>
+      <td class="desc">Procesos, CPU, RAM, disco, red y GPU en tiempo real</td>
+    </tr>
+    <tr class="cat-row">
+      <td colspan="3">💡  PowerShell</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">19.1 Versión PowerShell</td>
+      <td class="desc">Versión instalada de PS</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">19.2 Procesos top RAM</td>
+      <td class="desc">Top 10 procesos por uso de RAM</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">19.3 Política de ejecución</td>
+      <td class="desc">Política actual de scripts PS</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">19.4 Habilitar scripts PS</td>
+      <td class="desc">Permite scripts no firmados</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">19.5 Servicios activos</td>
+      <td class="desc">Lista servicios en estado Running</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">19.6 Config red completa</td>
+      <td class="desc">Adaptadores y configuración IP</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">19.7 Últimos 20 errores sistema</td>
+      <td class="desc">Errores del log del sistema</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">19.8 Usuarios locales (PS)</td>
+      <td class="desc">Get-LocalUser con último acceso</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">19.9 Info discos físicos (PS)</td>
+      <td class="desc">Tipo y tamaño de discos físicos</td>
+    </tr>
+    <tr>
+      <td class="check"><input type="checkbox"></td>
+      <td class="name">19.10 Actualizaciones instaladas</td>
+      <td class="desc">Historial de actualizaciones de Windows</td>
+    </tr>
+</table>
+
+<div class="footer">IT Tools · Checklist de verificación · Imprime con Ctrl+P → Guardar como PDF → Tamaño A4</div>
+</body>
+</html>
